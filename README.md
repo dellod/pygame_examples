@@ -1,2 +1,2 @@
-# pygame_examples
+# PyGame Examples
 Examples using PyGame!
