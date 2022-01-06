@@ -9,7 +9,7 @@ This file will demonstrate a practical use of the debugger tool in PyCharm.
 
 
 def addition_function(number_1, number_2):
-    result = number_1 * number_2
+    result = number_1 * number_2  # Something is wrong here!
     return result
 
 
