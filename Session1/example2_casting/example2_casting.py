@@ -22,3 +22,6 @@ g = float("8.6")    # g now becomes 8.6
 h = str("hi")       # h now becomes "hi" (doesn't change)
 i = str(2)          # i now becomes "2"
 j = str(3.5)        # j now becomes "3.5"
+
+# Does not work
+x = int("hi")       # This will give you an error!
