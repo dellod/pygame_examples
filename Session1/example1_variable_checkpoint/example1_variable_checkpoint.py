@@ -1,5 +1,5 @@
 # !/usr/bin/env python3
-# @file broken_code.py
+# @file example1_variable_checkpoint.py
 # SCRP: Session1 - Variable Checkpoint
 # Daryl Dang
 
