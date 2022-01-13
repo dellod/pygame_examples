@@ -1,6 +1,6 @@
 # !/usr/bin/env python3
 # @file example3_arithmetic_operators_quiz.py
-# SCRP: Session 1 - Example 2: Casting
+# SCRP: Session 1 - Example 3: Arithmetic Operators Quiz
 # Daryl Dang
 
 """
