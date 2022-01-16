@@ -1,6 +1,6 @@
 # !/usr/bin/env python3
 # @file example9_while_loop.py
-# SCRP: Session 1 - Example 8: While Loop
+# SCRP: Session 1 - Example 9: While Loop
 # Daryl Dang
 
 """
