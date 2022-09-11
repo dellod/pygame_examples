@@ -9,24 +9,31 @@
 # See https://peps.python.org/pep-0008/ for more detailed guidelines.
 ####################################################################################################
 
-# 1. Ask user for input for the level of Fibonacci Sequence and store in variable
+# 1. Ask user for input for the level of Fibonacci sequence and store in variable.
 #   NOTE: need to type cast the input as it will first be read as a string
 iterations = int(input("Enter number of iterations for Fibonacci Sequence (larger than 2): "))
 
-# 2. Define starting numbers.
+# 2. If user enters in a number less than or equal to 2, tell them the program cannot run and exit.
+if (iterations <= 2):
+    print("the program requires a number larger than 2, exiting program...")
+    exit(0)
+else:
+    print("Correct input, working on creating Fibonacci Sequence...")
+
+# 3. Define starting numbers.
 n1 = 0
 n2 = 1
 
-# 3. Create key variables for loop
+# 4. Create key variables for loop.
 prev_number = n1        # First number to add
 curr_number = n2        # Second number to add
 i = 2                   # Loop counter (starts at 2 since we skip the first two numbers)
 
-# 4. Print first two numbers (n1 and n2), as these will always be present for every sequence.
+# 5. Print first two numbers (n1 and n2), as these will always be present for every sequence.
 print("Number 1: " + str(n1))
 print("Number 2: " + str(n2))
 
-# 5. Loop
+# 6. Loop through and print each iteration of Fibonacci sequence.
 while i < iterations:
     # Calculate new number and print it
     temp = prev_number + curr_number
