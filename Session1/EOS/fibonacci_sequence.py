@@ -3,12 +3,6 @@
 # SCRP: EOS - Fibonacci Sequence 
 # Daryl Dang
 
-####################################################################################################
-# This file will serve as a template for starting out projects and setting up the PyGame window.
-# Note: examples will LOOSELY follow PEP 8 guidelines.
-# See https://peps.python.org/pep-0008/ for more detailed guidelines.
-####################################################################################################
-
 # 1. Ask user for input for the level of Fibonacci sequence and store in variable.
 #   NOTE: need to type cast the input as it will first be read as a string
 iterations = int(input("Enter number of iterations for Fibonacci Sequence (larger than 2): "))
