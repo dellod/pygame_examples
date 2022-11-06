@@ -1,6 +1,6 @@
 # !/usr/bin/env python3
 # @file fibonacci_sequence.py
-# SCRP: EOS - Fibonacci Sequence 
+# SCRP: EOS - Fibonacci Sequence
 # Daryl Dang
 
 # 1. Ask user for input for the level of Fibonacci sequence and store in variable.
