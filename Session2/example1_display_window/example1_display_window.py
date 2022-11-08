@@ -11,6 +11,7 @@ pygame.init()
 
 # 3. Create the display window
 display = pygame.display.set_mode((500, 500))  # 500 pixels by 500 pixels
+pygame.display.set_caption("My Game") # Set the name of the window
 
 # 4. Create a "game" (infinite) loop
 running = True
