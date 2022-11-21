@@ -22,10 +22,12 @@ while running:
             running = False
 
     # Draw circle
-    position = [250, 250]
-    radius = 100
-    width = 0
-    pygame.draw.circle(display, 255, [250, 250], 100, 0)
+    surface     = display       # what surface to draw on
+    colour      = WHITE         # the colour of the circle
+    center      = [250, 250]    # the center position of the circle
+    radius      = 100           # radius of the circle
+    width       = 0             # used for line thickness or to just fill the circle
+    pygame.draw.circle(surface, colour, center, radius, width)
 
     # Update the pygame window
     pygame.display.update()
