@@ -1,5 +1,5 @@
 # !/usr/bin/env python3
-# @file example2_drawing_circle.py
+# @file example3_moving_circle.py
 # SCRP: Example 3 - Moving Circle
 # Daryl Dang
 
