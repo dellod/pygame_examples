@@ -76,5 +76,5 @@ while running:
     # Update the pygame window
     pygame.display.update()
 
-# 5. Close and clean up
+# Close and clean up
 pygame.quit()
