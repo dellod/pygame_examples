@@ -37,7 +37,6 @@ has_scored = False
 GROUND = (500, 400)
 
 # Game loop
-pygame.time.delay(5000)
 running = True
 while running:
     # Limit clock frame it
