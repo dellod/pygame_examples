@@ -3,6 +3,16 @@
 # SCRP: BONUS 2 - Event Figure
 # Daryl Dang
 
+"""
+BONUS 2 - Event Figure
+----------------------
+This BONUS extends the simple moving figure by adding images and using pygame events to cycle
+through the different animation sprites.
+
+NOTE: This is not the optimal way of animating figures as you can see this method actually lags as
+the program runs. The only purpose is to demonstrate the use of pygame events in a simple way.
+"""
+
 import pygame
 
 # CONSTANTS
@@ -73,25 +83,28 @@ while running:
         # Turns off the standing
         if event.type == STAND_EVENT:
             is_standing = False
-            pygame.event.post(pygame.event.Event(RUN1_EVENT))
+            pygame.event.post(pygame.event.Event(RUN1_EVENT)) # Trigger next animation
+        # Run 1 animation
         if event.type == RUN1_EVENT:
             is_run1 = True
             is_run2 = False
             is_run3 = False
             pygame.time.delay(RUN_TIMER)
-            pygame.event.post(pygame.event.Event(RUN2_EVENT))
+            pygame.event.post(pygame.event.Event(RUN2_EVENT)) # Trigger next animation
+        # Run 2 animation
         if event.type == RUN2_EVENT:
             is_run1 = False
             is_run2 = True
             is_run3 = False
             pygame.time.delay(RUN_TIMER)
-            pygame.event.post(pygame.event.Event(RUN3_EVENT))
+            pygame.event.post(pygame.event.Event(RUN3_EVENT)) # Trigger next animation
+        # Run 3 animation
         if event.type == RUN3_EVENT:
             is_run1 = False
             is_run2 = False
             is_run3 = True
             pygame.time.delay(RUN_TIMER)
-            pygame.event.post(pygame.event.Event(RUN1_EVENT))
+            pygame.event.post(pygame.event.Event(RUN1_EVENT)) # Trigger next animation
 
     # Draw images
     if is_standing:

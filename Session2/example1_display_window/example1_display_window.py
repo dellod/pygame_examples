@@ -3,6 +3,12 @@
 # SCRP: Example 1 - Display Window
 # Daryl Dang
 
+"""
+Example 1 - Display Window
+--------------------------
+This example goes over how to create a display window and essential steps with PyGame.
+"""
+
 # 1. Need to import the PyGame library
 import pygame
 

@@ -3,6 +3,13 @@
 # SCRP: BONUS 1 - Conditional Figure
 # Daryl Dang
 
+"""
+BONUS 1 - Conditional Figure
+----------------------------
+This Bonus shows is an extension of a simple moving figure and adds restricted movement based on a
+position (if statements).
+"""
+
 import pygame
 
 # CONSTANTS

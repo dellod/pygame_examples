@@ -3,6 +3,12 @@
 # SCRP: Example 2 - Drawing Circle
 # Daryl Dang
 
+"""
+Example 2 - Drawing Circle
+--------------------------
+This example goes over a simple way to draw a circle with the pygame.draw library.
+"""
+
 import pygame
 
 # GLOBALS

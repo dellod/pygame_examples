@@ -3,6 +3,12 @@
 # SCRP: Example 3 - Moving Circle
 # Daryl Dang
 
+"""
+Example 3 - Moving Circle
+-------------------------
+This example uses pygame.draw library along with showing how to move a circle on the display window.
+"""
+
 import pygame
 
 # GLOBALS

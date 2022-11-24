@@ -3,6 +3,14 @@
 # SCRP: EOS - Moving Figure
 # Daryl Dang
 
+"""
+EOS - Moving Figure
+-------------------
+This End of Session example shows a moving figure with multiple shapes. This example is more
+advanced as it also adds in conditional boundary checking with a pygame event timer. These
+components are optional.
+"""
+
 import pygame
 import math
 import random
