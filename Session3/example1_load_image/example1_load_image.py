@@ -5,7 +5,7 @@
 
 """
 Example 1 - Load Image
---------------------------
+----------------------
 This example goes over how to load an image.
 """
 

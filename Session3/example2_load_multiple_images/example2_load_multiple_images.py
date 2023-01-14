@@ -5,7 +5,7 @@
 
 """
 Example 2 - Load Multiple Images
---------------------------
+--------------------------------
 This example goes over how to load multiple images to the screen.
 One being the background and the other being a character of some sort in the background.
 """
