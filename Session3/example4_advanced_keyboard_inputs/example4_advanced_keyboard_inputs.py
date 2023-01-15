@@ -20,7 +20,7 @@ MARIO_Y = 375
 # Initialize pygame and display window (this isn't that crucial for this basic program)
 pygame.init()
 display = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-pygame.display.set_caption("Basic Keyboard Inputs")
+pygame.display.set_caption("Advanced Keyboard Inputs")
 
 # Load mario background in
 mario_background_img = pygame.image.load("Session3\\example4_advanced_keyboard_inputs\\mario-bg.png").convert()
