@@ -1,5 +1,5 @@
 # !/usr/bin/env python3
-# @file example1_load_image.py
+# @file example4_advanced_keyboard_inputs.py
 # SCRP: Example 4 - Advanced Keyboard Inputs
 # Daryl Dang
 

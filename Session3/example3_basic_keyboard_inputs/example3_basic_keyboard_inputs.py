@@ -1,5 +1,5 @@
 # !/usr/bin/env python3
-# @file example1_load_image.py
+# @file example3_basic_keyboard_inputs.py
 # SCRP: Example 3 - Basic Keyboard Inputs
 # Daryl Dang
 

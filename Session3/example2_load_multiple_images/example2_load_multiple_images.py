@@ -1,5 +1,5 @@
 # !/usr/bin/env python3
-# @file example1_load_image.py
+# @file example2_load_multiple_images.py
 # SCRP: Example 2 - Load Multiple Images
 # Daryl Dang
 
