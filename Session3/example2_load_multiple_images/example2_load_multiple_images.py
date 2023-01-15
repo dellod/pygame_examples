@@ -27,7 +27,7 @@ mario_background_img = pygame.transform.scale(mario_background_img, (SCREEN_WIDT
 
 # Load character in
 mario_img = pygame.image.load("Session3\\example2_load_multiple_images\\mario.png").convert_alpha() # Use this to keep the background transparent
-mario_img = pygame.transform.scale(mario_img, (100, 100)) # Make the same as width and height of display window
+mario_img = pygame.transform.scale(mario_img, (100, 100)) # Make appropriate sized width and height
 
 # Game loop
 running = True
