@@ -56,7 +56,7 @@ while running:
             if event.key == pygame.K_RIGHT:
                 MARIO_X += 10 # Move by 10 pixels right
 
-    # Draw background
+    # Draw background (we need this in the game loop as without it you will see traces of mario)
     display.blit(mario_background_img, (0,0)) # Want background to take up whole screen
 
     # Draw mario in
