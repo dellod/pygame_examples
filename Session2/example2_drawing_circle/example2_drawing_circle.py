@@ -12,7 +12,12 @@ WHITE = (255, 255, 255)
 pygame.init()
 display = pygame.display.set_mode((500, 500))
 pygame.display.set_caption("Drawing Circle")
-
+ # Draw circle
+surface     = display       # what surface to draw on
+colour      = WHITE         # the colour of the circle
+center      = [250, 250]    # the center position of the circle
+radius      = 100           # radius of the circle
+width       = 0             # used for line thickness or to just fill the circle
 # Game loop
 running = True
 while running:
@@ -21,12 +26,7 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
-    # Draw circle
-    surface     = display       # what surface to draw on
-    colour      = WHITE         # the colour of the circle
-    center      = [250, 250]    # the center position of the circle
-    radius      = 100           # radius of the circle
-    width       = 0             # used for line thickness or to just fill the circle
+   
     pygame.draw.circle(surface, colour, center, radius, width)
 
     # Update the pygame window
