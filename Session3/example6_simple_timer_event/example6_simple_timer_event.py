@@ -40,15 +40,16 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
+        # Print statement every 2 seconds
         if event.type == SIMPLE_PRINT_EVENT:
-            # Print statement every 2 seconds
             print("Simple event that prints to the console every 2 seconds!")
             print("--------------------------------------------------------")
 
+        # Change the colour randomly every 1 seconds
         if event.type == COLOUR_CHANGE_EVENT:
-            # Change the colour randomly every 1 seconds
             COLOUR = [random.uniform(0, 255), random.uniform(0, 255), random.uniform(0, 255)]
 
+    # Draw circle
     pygame.draw.circle(display, COLOUR, CENTER, RADIUS, 0)
 
     # Update the pygame window
