@@ -1,10 +1,10 @@
 # !/usr/bin/env python3
-# @file example8_basic_collision_detection.py
-# SCRP: Example 8 - Basic Mouse Position Collision Detection
+# @file example1_basic_collision_detection.py
+# SCRP: Example 1 - Basic Mouse Position Collision Detection
 # Daryl Dang
 
 """
-Example 8 - Basic Mouse Position Collision Detection
+Example 1 - Basic Mouse Position Collision Detection
 ----------------------------------------------------
 This example demonstrates basic collision detection with your mouse and drawn object on the screen
 using collidepoint().
