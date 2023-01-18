@@ -15,11 +15,13 @@ import pygame
 # GLOBALS
 SCREEN_WIDTH = 1000
 SCREEN_HEIGHT = 500
+FPS = 60
 
 # Initialize pygame and display window
 pygame.init()
 display = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Load Multiple Images")
+clock = pygame.time.Clock()
 
 # Load background in
 mario_background_img = pygame.image.load("Session3\\example2_load_multiple_images\\mario-bg.png").convert()
@@ -41,8 +43,9 @@ while running:
     display.blit(mario_background_img, (0,0)) # Want background to take up whole screen
     display.blit(mario_img, (50, 375)) # Specific position for mario to be on the ground
 
-    # Update the pygame window
+    # Update the pygame window and set clock tick
     pygame.display.update()
+    clock.tick(FPS)
 
 # Close and clean up
 pygame.quit()

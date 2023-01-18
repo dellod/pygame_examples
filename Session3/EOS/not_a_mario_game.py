@@ -15,7 +15,6 @@ Combining everything in session 3 and making it more complex by adding elements 
 ####################################################################################################
 import pygame
 
-
 ####################################################################################################
 # GLOBALS
 ####################################################################################################
@@ -42,12 +41,10 @@ THWOMP_Y = -50
 THWOMP_MOVEMENT = 7
 is_thwomp_falling = False # This variable will be used as a flag to make the thwomp fall
 
-
 ####################################################################################################
 # EVENTS
 ####################################################################################################
 THWOMP_FALLING = pygame.USEREVENT + 1
-
 
 ####################################################################################################
 # FUNCTIONS
@@ -70,7 +67,6 @@ def check_mario_keyboard_movement():
         if keys_pressed[pygame.K_UP]:
             is_jumping = True
 
-
 def make_mario_jump():
     # Define global variables
     global is_jumping, MARIO_Y, MARIO_Y_VELOCITY, JUMP_HEIGHT
@@ -85,11 +81,10 @@ def make_mario_jump():
             is_jumping = False # Change state back to false
             MARIO_Y_VELOCITY = JUMP_HEIGHT # Reset velocity to original jump height
 
-
 ####################################################################################################
 # SETUP (Initialize and load images)
 ####################################################################################################
-# Initialize pygame and display window (this isn't that crucial for this basic program)
+# Initialize pygame and display window
 pygame.init()
 display = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Not a Mario Game")
@@ -107,7 +102,6 @@ mario_img = pygame.transform.scale(mario_img, (MARIO_WIDTH, MARIO_HEIGHT))
 thwomp_img = pygame.image.load("Session3\\EOS\\thwomp.png").convert_alpha()
 thwomp_img = pygame.transform.scale(thwomp_img, (100, 100))
 pygame.time.set_timer(THWOMP_FALLING, 2000) # Every 2 seconds (2000 milliseconds)
-
 
 ####################################################################################################
 # GAME LOOP
@@ -145,7 +139,7 @@ while running:
         is_thwomp_falling = False
         THWOMP_Y = -50
 
-    # Update the pygame window
+    # Update the pygame window and set clock tick
     pygame.display.update()
     clock.tick(FPS)
 

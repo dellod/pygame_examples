@@ -24,7 +24,7 @@ RADIUS =  100
 SIMPLE_PRINT_EVENT = pygame.USEREVENT + 1
 COLOUR_CHANGE_EVENT = pygame.USEREVENT + 2
 
-# Initialize pygame and display window (this isn't that crucial for this basic program)
+# Initialize pygame and display window
 pygame.init()
 display = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Simple Timer Event")
@@ -54,9 +54,9 @@ while running:
     # Draw circle
     pygame.draw.circle(display, COLOUR, CENTER, RADIUS, 0)
 
-    # Update the pygame window
+    # Update the pygame window and set clock tick
     pygame.display.update()
-    clock.tick(60)
+    clock.tick(FPS)
 
 # Close and clean up
 pygame.quit()

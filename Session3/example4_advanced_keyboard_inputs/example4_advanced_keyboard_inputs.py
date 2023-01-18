@@ -18,7 +18,7 @@ FPS = 60
 MARIO_X = 50
 MARIO_Y = 375
 
-# Initialize pygame and display window (this isn't that crucial for this basic program)
+# Initialize pygame and display window
 pygame.init()
 display = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Advanced Keyboard Inputs")
@@ -64,9 +64,9 @@ while running:
     # Draw mario in
     display.blit(mario_img, (MARIO_X, MARIO_Y))
 
-    # Update the pygame window
+    # Update the pygame window and set clock tick
     pygame.display.update()
-    clock.tick(60)
+    clock.tick(FPS)
 
 # Close and clean up
 pygame.quit()
