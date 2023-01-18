@@ -6,7 +6,7 @@
 """
 Example 1 - Mouse Position
 ----------------------------------------------------
-This example demonstrates the basics of using mouse inputs.
+This example demonstrates the basics of reading mouse positions.
 """
 ####################################################################################################
 # IMPORTS
@@ -41,14 +41,14 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
+    # Make background white
+    display.fill(WHITE)
+
     # Get the mouse position and store it in a variable
     mouse_pos = pygame.mouse.get_pos()
 
     # Print the mouse position to the console (use format printing technique)
     print(f'(MOUSE X: {mouse_pos[0]}, MOUSE Y: {mouse_pos[1]})')
-
-    # Make background white
-    display.fill(WHITE)
 
     # Update the pygame window and set clock tick
     pygame.display.update()
