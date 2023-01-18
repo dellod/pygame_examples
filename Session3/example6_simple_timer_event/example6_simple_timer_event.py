@@ -15,6 +15,7 @@ import random
 # GLOBALS
 SCREEN_WIDTH = 500
 SCREEN_HEIGHT = 500
+FPS = 60
 COLOUR = [255, 255, 255]
 CENTER = [250, 250]
 RADIUS =  100
@@ -27,6 +28,7 @@ COLOUR_CHANGE_EVENT = pygame.USEREVENT + 2
 pygame.init()
 display = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Simple Timer Event")
+clock = pygame.time.Clock()
 
 # Trigger Events with a Timer
 pygame.time.set_timer(SIMPLE_PRINT_EVENT, 2000) # Every 2 seconds (2000 milliseconds)
@@ -54,6 +56,7 @@ while running:
 
     # Update the pygame window
     pygame.display.update()
+    clock.tick(60)
 
 # Close and clean up
 pygame.quit()

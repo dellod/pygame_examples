@@ -14,11 +14,13 @@ import pygame
 # GLOBALS
 SCREEN_WIDTH = 500
 SCREEN_HEIGHT = 500
+FPS = 60
 
 # Initialize pygame and display window (this isn't that crucial for this basic program)
 pygame.init()
 display = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Basic Keyboard Inputs")
+clock = pygame.time.Clock()
 
 # Game loop
 running = True
@@ -49,6 +51,7 @@ while running:
 
     # Update the pygame window
     pygame.display.update()
+    clock.tick(60)
 
 # Close and clean up
 pygame.quit()

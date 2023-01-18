@@ -14,12 +14,13 @@ import pygame
 # GLOBALS
 SCREEN_WIDTH = 1000
 SCREEN_HEIGHT = 500
+FPS = 60
 MARIO_X = 50
 MARIO_Y = 375
-MARIO_MOVEMENT = 0.1
+MARIO_MOVEMENT = 5
 THWOMP_X = 600
 THWOMP_Y = -50
-THWOMP_MOVEMENT = 0.2
+THWOMP_MOVEMENT = 10
 
 # EVENTS
 THWOMP_FALLING = pygame.USEREVENT + 1
@@ -28,6 +29,7 @@ THWOMP_FALLING = pygame.USEREVENT + 1
 pygame.init()
 display = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Advanced Timer Events")
+clock = pygame.time.Clock()
 
 # Load mario background in
 mario_background_img = pygame.image.load("Session3\\example7_advanced_timer_event\\mario-bg.png").convert()
@@ -82,6 +84,7 @@ while running:
 
     # Update the pygame window
     pygame.display.update()
+    clock.tick(60)
 
 # Close and clean up
 pygame.quit()

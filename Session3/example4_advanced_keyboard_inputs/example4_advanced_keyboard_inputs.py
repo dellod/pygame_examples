@@ -14,6 +14,7 @@ import pygame
 # GLOBALS
 SCREEN_WIDTH = 1000
 SCREEN_HEIGHT = 500
+FPS = 60
 MARIO_X = 50
 MARIO_Y = 375
 
@@ -21,6 +22,7 @@ MARIO_Y = 375
 pygame.init()
 display = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Advanced Keyboard Inputs")
+clock = pygame.time.Clock()
 
 # Load mario background in
 mario_background_img = pygame.image.load("Session3\\example4_advanced_keyboard_inputs\\mario-bg.png").convert()
@@ -64,6 +66,7 @@ while running:
 
     # Update the pygame window
     pygame.display.update()
+    clock.tick(60)
 
 # Close and clean up
 pygame.quit()
