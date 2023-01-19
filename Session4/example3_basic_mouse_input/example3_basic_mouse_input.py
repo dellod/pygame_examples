@@ -41,12 +41,15 @@ while running:
         # Mouse button inputs
         if event.type == pygame.MOUSEBUTTONDOWN:
             print("A mouse button was pressed!")
-            # Left mouse button check
+
             mouse_pressed = pygame.mouse.get_pressed()
+            # Left mouse button check
             if mouse_pressed[0]:
                 print("Left mouse button was pressed!")
+            # Middle mouse button check
             if mouse_pressed[1]:
                 print("Middle mouse button was pressed!")
+            # Right mouse button check
             if mouse_pressed[2]:
                 print("Right mouse button was pressed!")
 
