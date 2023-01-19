@@ -39,7 +39,9 @@ clock = pygame.time.Clock()
 display.fill(WHITE)
 pygame.display.flip()
 
+####################################################################################################
 # GAME LOOP
+####################################################################################################
 running = True
 while running:
     for event in pygame.event.get():

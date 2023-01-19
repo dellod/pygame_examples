@@ -30,7 +30,9 @@ display = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT)) # Doesn't matte
 pygame.display.set_caption("Basic Mouse Input")
 clock = pygame.time.Clock()
 
+####################################################################################################
 # GAME LOOP
+####################################################################################################
 running = True
 while running:
     for event in pygame.event.get():
