@@ -65,7 +65,7 @@ while running:
     if collide:
         COLOUR = [255, 0, 0] # RED
     else:
-        COLOUR = [0, 0, 0] # WHITE
+        COLOUR = [0, 0, 0] # BLACK
 
     # Update the pygame window and set clock tick
     pygame.display.update()
