@@ -1,6 +1,6 @@
 # !/usr/bin/env python3
 # @file example2_following_mouse_position.py
-# SCRP: Example 1 - Following Mouse Position
+# SCRP: Example 2 - Following Mouse Position
 # Daryl Dang
 
 """
@@ -58,7 +58,7 @@ while running:
 
     # Update the pygame window and set clock tick
     pygame.display.update()
-    clock.tick(60)
+    clock.tick(FPS)
 
 # Close and clean up
 pygame.quit()
