@@ -30,9 +30,8 @@ display = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT)) # Doesn't matte
 pygame.display.set_caption("Mouse Position")
 clock = pygame.time.Clock()
 
-####################################################################################################
+
 # GAME LOOP
-####################################################################################################
 running = True
 while running:
     for event in pygame.event.get():
@@ -40,13 +39,19 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
-        # Check when mouse button is pressed
+        # Mouse button inputs
         if event.type == pygame.MOUSEBUTTONDOWN:
             print("A mouse button was pressed!")
+            # Left mouse button check
+            mouse_pressed = pygame.mouse.get_pressed()
+            if mouse_pressed[0]:
+                print("Left mouse button was pressed!")
+            if mouse_pressed[1]:
+                print("Middle mouse button was pressed!")
+            if mouse_pressed[2]:
+                print("Right mouse button was pressed!")
 
-    # Get the mouse position and store it in a variable (this variable is a tuple!)
-    mouse_pos = pygame.mouse.get_pos()
-
+            print("---------------------------")
     # Update the pygame window and set clock tick
     pygame.display.update()
     clock.tick(FPS)
