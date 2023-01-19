@@ -34,7 +34,7 @@ RADIUS = 50
 # Initialize pygame and display window
 pygame.init()
 display = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-pygame.display.set_caption("Mouse Position")
+pygame.display.set_caption("Following Mouse Position")
 clock = pygame.time.Clock()
 
 ####################################################################################################
