@@ -27,9 +27,8 @@ FPS = 60
 # Initialize pygame and display window
 pygame.init()
 display = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT)) # Doesn't matter too much here
-pygame.display.set_caption("Mouse Position")
+pygame.display.set_caption("Basic Mouse Input")
 clock = pygame.time.Clock()
-
 
 # GAME LOOP
 running = True
