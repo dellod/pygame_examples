@@ -37,7 +37,7 @@ RADIUS = 25
 # Initialize pygame and display window
 pygame.init()
 display = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-pygame.display.set_caption("Rectangle Collision Detection")
+pygame.display.set_caption("Distance Between Points")
 clock = pygame.time.Clock()
 
 ####################################################################################################
