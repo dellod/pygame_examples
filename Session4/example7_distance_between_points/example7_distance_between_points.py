@@ -39,6 +39,8 @@ pygame.init()
 display = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Distance Between Points")
 clock = pygame.time.Clock()
+font = pygame.font.Font('freesansbold.ttf', 32)
+
 
 ####################################################################################################
 # FUNCTIONS
@@ -46,9 +48,21 @@ clock = pygame.time.Clock()
 def get_dist(x1, y1, x2, y2):
     """
     Get distance between two points on the display window given their x and y positions. Point 1
-    should correspond to x1 and y1 while Point 2 should correspond to x2 and y2.
+    should correspond to x1 and y1 while Point 2 should correspond to x2 and y2. This formula is
+    based on Pythagorean Theorem.
+
+    Parameters
+    ----------
+    x1 (float) - x-coordinate of point 1
+    y1 (float) - y-coordinate of point 1
+    x2 (float) - x-coordinate of point 2
+    y2 (float) - y-coordinate of point 2
+
+    Returns
+    -------
+    distance (float) - distance between the two points specified
     """
-    distance = math.sqrt((math.pow(x1 - x2, 2)) + (math.pow(y1 - y2, 2)))
+    distance = math.sqrt((math.pow(x1 - x2, 2)) + (math.pow(y1 - y2, 2))) # Pythagorean theorem
     return distance
 
 ####################################################################################################
@@ -77,7 +91,6 @@ while running:
     pygame.draw.line(display, RED, CENTER, mouse_pos)
 
     # OPTIONAL: display text of distance on display
-    font = pygame.font.Font('freesansbold.ttf', 32)
     text = font.render(f'Distance: {distance_between_points}', True, BLACK)
     display.blit(text, (10, 10))
 
