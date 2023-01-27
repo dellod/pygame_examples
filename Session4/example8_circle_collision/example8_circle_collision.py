@@ -66,7 +66,7 @@ def get_dist(x1, y1, x2, y2):
     -------
     distance (float) - distance between the two points specified
     """
-    distance = math.sqrt((math.pow(x1 - x2, 2)) + (math.pow(y1 - y2, 2))) # Pythagorean theorem
+    distance = math.sqrt((math.pow(x2 - x1, 2)) + (math.pow(y2 - y1, 2))) # Pythagorean theorem
     return distance
 
 ####################################################################################################
