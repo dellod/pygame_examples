@@ -14,3 +14,7 @@ class Animal:
 
 dog = Animal()
 print(dog.name)
+
+# We can make another object with a different variable name
+dog2 = Animal()
+print(dog2.name) # This isn't very practical if two dogs have the same name...
