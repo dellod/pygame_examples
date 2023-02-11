@@ -47,7 +47,7 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
-    # Draw black background
+    # Draw white background
     display.fill(WHITE)
 
     # Draw circle that will be checking the collision
