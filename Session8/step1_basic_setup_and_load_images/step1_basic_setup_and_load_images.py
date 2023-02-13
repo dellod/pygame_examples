@@ -22,7 +22,7 @@ SCREEN_HEIGHT = 800
 FPS = 60
 
 # Dog
-DOG_POS = (360, 400)
+DOG_POS = (360, 400) # this is a tuple because it is not moving
 
 ####################################################################################################
 # SETUP
@@ -40,10 +40,6 @@ duck_hunter_background_img = pygame.transform.scale(duck_hunter_background_img, 
 # Load dog
 dog_img = pygame.image.load("Session8\\assets\\dog.png").convert_alpha()
 dog_img = pygame.transform.scale(dog_img, (250, 200))
-
-# Load duck (we will worry about drawing in the later steps)
-duck_img = pygame.image.load("Session8\\assets\\duck.png").convert_alpha()
-duck_img = pygame.transform.scale(duck_img, (75, 75))
 
 ####################################################################################################
 # MAIN GAME LOOP
