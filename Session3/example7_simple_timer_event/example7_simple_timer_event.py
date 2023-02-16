@@ -1,10 +1,10 @@
 # !/usr/bin/env python3
-# @file example6_simple_timer_event.py
-# SCRP: Example 6 - Simple Timer Event
+# @file example7_simple_timer_event.py
+# SCRP: Example 7 - Simple Timer Event
 # Daryl Dang
 
 """
-Example 6 - Simple Timer Event
+Example 7 - Simple Timer Event
 ---------------------------------
 This example goes over a simple timer event to show the basics of events.
 """

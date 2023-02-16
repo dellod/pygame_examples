@@ -1,10 +1,10 @@
 # !/usr/bin/env python3
-# @file example4_advanced_keyboard_inputs.py
-# SCRP: Example 4 - Advanced Keyboard Inputs
+# @file example5_advanced_keyboard_inputs.py
+# SCRP: Example 5 - Advanced Keyboard Inputs
 # Daryl Dang
 
 """
-Example 4 - Advanced Keyboard Inputs
+Example 5 - Advanced Keyboard Inputs
 ---------------------------------
 This example goes over using keyboard inputs to move a figure on the screen
 """
@@ -15,8 +15,8 @@ import pygame
 SCREEN_WIDTH = 1000
 SCREEN_HEIGHT = 500
 FPS = 60
-MARIO_X = 50
-MARIO_Y = 375
+GUY_X = 50
+GUY_Y = 375
 
 # Initialize pygame and display window
 pygame.init()
@@ -24,13 +24,13 @@ display = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Advanced Keyboard Inputs")
 clock = pygame.time.Clock()
 
-# Load mario background in
-mario_background_img = pygame.image.load("Session3\\example4_advanced_keyboard_inputs\\mario-bg.png").convert()
-mario_background_img = pygame.transform.scale(mario_background_img, (SCREEN_WIDTH, SCREEN_HEIGHT))
+# Load background in
+not_mario_background_img = pygame.image.load("Session3\\example5_advanced_keyboard_inputs\\not-mario-bg.png").convert()
+not_mario_background_img = pygame.transform.scale(not_mario_background_img, (SCREEN_WIDTH, SCREEN_HEIGHT))
 
-# Load mario in
-mario_img = pygame.image.load("Session3\\example4_advanced_keyboard_inputs\\mario.png").convert_alpha() # Use this to keep the background transparent
-mario_img = pygame.transform.scale(mario_img, (100, 100))
+# Load character in
+not_mario_img = pygame.image.load("Session3\\example5_advanced_keyboard_inputs\\not-mario.png").convert_alpha() # Use this to keep the background transparent
+not_mario_img = pygame.transform.scale(not_mario_img, (100, 100))
 
 # Game loop
 running = True
@@ -47,22 +47,22 @@ while running:
         if event.type == pygame.KEYDOWN:
             # UP key check
             if event.key == pygame.K_UP:
-                MARIO_Y -= 10 # Move by 10 pixels up
+                GUY_Y -= 10 # Move by 10 pixels up
             # DOWN key check
             if event.key == pygame.K_DOWN:
-                MARIO_Y += 10 # Move by 10 pixels up
+                GUY_Y += 10 # Move by 10 pixels up
             # LEFT key check
             if event.key == pygame.K_LEFT:
-                MARIO_X -= 10 # Move by 10 pixels left
+                GUY_X -= 10 # Move by 10 pixels left
             # RIGHT key check
             if event.key == pygame.K_RIGHT:
-                MARIO_X += 10 # Move by 10 pixels right
+                GUY_X += 10 # Move by 10 pixels right
 
-    # Draw background (we need this in the game loop as without it you will see traces of mario)
-    display.blit(mario_background_img, (0,0)) # Want background to take up whole screen
+    # Draw background (we need this in the game loop as without it you will see traces of your character)
+    display.blit(not_mario_background_img, (0,0)) # Want background to take up whole screen
 
     # Draw mario in
-    display.blit(mario_img, (MARIO_X, MARIO_Y))
+    display.blit(not_mario_img, (GUY_X, GUY_Y))
 
     # Update the pygame window and set clock tick
     pygame.display.update()

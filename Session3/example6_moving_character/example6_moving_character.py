@@ -1,10 +1,10 @@
 # !/usr/bin/env python3
-# @file example5_moving_character.py
-# SCRP: Example 5 - Moving Character
+# @file example6_moving_character.py
+# SCRP: Example 6 - Moving Character
 # Daryl Dang
 
 """
-Example 5 - Moving Character
+Example 6 - Moving Character
 ---------------------------------
 This example goes over how to improve movement from example 4 and used frame-based techniques
 instead.
@@ -16,9 +16,9 @@ import pygame
 SCREEN_WIDTH = 1000
 SCREEN_HEIGHT = 500
 FPS = 60
-MARIO_X = 50
-MARIO_Y = 375
-MARIO_MOVEMENT = 5
+GUY_X = 50
+GUY_Y = 375
+GUY_MOVEMENT = 5
 
 # Initialize pygame and display window
 pygame.init()
@@ -27,12 +27,12 @@ pygame.display.set_caption("Basic Keyboard Inputs")
 clock = pygame.time.Clock()
 
 # Load mario background in
-mario_background_img = pygame.image.load("Session3\\example5_moving_character\\mario-bg.png").convert()
-mario_background_img = pygame.transform.scale(mario_background_img, (SCREEN_WIDTH, SCREEN_HEIGHT))
+not_mario_background_img = pygame.image.load("Session3\\example6_moving_character\\not-mario-bg.png").convert()
+not_mario_background_img = pygame.transform.scale(not_mario_background_img, (SCREEN_WIDTH, SCREEN_HEIGHT))
 
 # Load mario in
-mario_img = pygame.image.load("Session3\\example5_moving_character\\mario.png").convert_alpha() # Use this to keep the background transparent
-mario_img = pygame.transform.scale(mario_img, (100, 100))
+not_mario_img = pygame.image.load("Session3\\example6_moving_character\\not-mario.png").convert_alpha() # Use this to keep the background transparent
+not_mario_img = pygame.transform.scale(not_mario_img, (100, 100))
 
 # Game loop
 running = True
@@ -71,19 +71,19 @@ while running:
 
     # Here we index the keys and see if the dictionary returns true for each given key.
     if keys_pressed[pygame.K_LEFT]:
-        MARIO_X -= MARIO_MOVEMENT
+        GUY_X -= GUY_MOVEMENT
     if keys_pressed[pygame.K_RIGHT]:
-        MARIO_X += MARIO_MOVEMENT
+        GUY_X += GUY_MOVEMENT
     if keys_pressed[pygame.K_UP]:
-        MARIO_Y -= MARIO_MOVEMENT
+        GUY_Y -= GUY_MOVEMENT
     if keys_pressed[pygame.K_DOWN]:
-        MARIO_Y += MARIO_MOVEMENT
+        GUY_Y += GUY_MOVEMENT
 
-    # Draw background (we need this in the game loop as without it you will see traces of mario)
-    display.blit(mario_background_img, (0,0)) # Want background to take up whole screen
+    # Draw background (we need this in the game loop as without it you will see traces of your character)
+    display.blit(not_mario_background_img, (0,0)) # Want background to take up whole screen
 
-    # Draw mario in with the global positioning
-    display.blit(mario_img, (MARIO_X, MARIO_Y))
+    # Draw character in with the global positioning
+    display.blit(not_mario_img, (GUY_X, GUY_Y))
 
     # Update the pygame window and set clock tick
     pygame.display.update()
