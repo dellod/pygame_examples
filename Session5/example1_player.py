@@ -29,7 +29,7 @@ player_X_movement = 0
 
 #blit player
 def player(x,y):
-    #important to
+    #important to offset the x and y position slightly so the center of the ship is displayed correctly
     screen.blit(player_image,(x-16, y+10))
 
 #Game loop
