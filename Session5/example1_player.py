@@ -25,7 +25,7 @@ player_image = pygame.image.load('images\spaceship.png').convert_alpha()
 player_image = pygame.transform.scale(player_image,(75,50))
 player_X = 400
 player_Y = 523
-player_X_movement = 0
+
 
 #blit player
 def player(x,y):
@@ -49,8 +49,6 @@ while running:
         player_X += -1.7
     if keys_pressed[pygame.K_RIGHT]:
         player_X += 1.7
-
-    player_X += player_X_movement
 
     # stop player from going out of bounds
     if player_X <= 16:
