@@ -2,7 +2,7 @@
 
 import pygame
 
-
+#Initializing setup variables for later
 WHITE = (255, 255, 255)
 BLACK = (0,0,0)
 FPS = 60
