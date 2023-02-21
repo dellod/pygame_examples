@@ -36,10 +36,10 @@ class Duck:
 
     Attributes
     ----------
-    duck_img ():
+    duck_img (pygame.Surface): Image of duck loaded from file
     duck_pos (list): Position of the duck
     """
-    def __init__(self, duck_img_file_path: str):
+    def __init__(self, display: pygame.Surface, duck_img_file_path: str):
         """
         Init method
 
@@ -47,6 +47,9 @@ class Duck:
         ----------
             duck_img_file_path (str): The file location of the duck image
         """
+        # Store the display that we are drawing the duck to
+        self.display = display
+
         # Load duck
         self.duck_img = pygame.image.load(duck_img_file_path).convert_alpha()
         self.duck_img = pygame.transform.scale(self.duck_img, DUCK_SIZE)
@@ -54,7 +57,7 @@ class Duck:
         # Load a default position for the duck to start
         self.duck_pos = [0, 0]
 
-    def draw(self, display: pygame.Surface):
+    def draw(self):
         """
         This will draw the duck to the display window using it's current set position (duck_pos)
 
@@ -83,7 +86,7 @@ dog_img = pygame.image.load("Session8\\assets\\dog.png").convert_alpha()
 dog_img = pygame.transform.scale(dog_img, DOG_SIZE)
 
 # Create our duck object
-duck = Duck("Session8\\assets\\duck.png")
+duck = Duck(display, "Session8\\assets\\duck.png")
 
 ####################################################################################################
 # MAIN GAME LOOP
@@ -103,7 +106,7 @@ while running:
     display.blit(dog_img, DOG_POS)
 
     # Draw duck using draw method from class
-    duck.draw(display)
+    duck.draw()
 
     # Update the pygame window and set clock tick
     pygame.display.update()
