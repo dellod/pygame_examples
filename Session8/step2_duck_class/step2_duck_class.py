@@ -23,7 +23,7 @@ FPS = 60
 
 # Dog
 DOG_POS = (360, 400) # this is a tuple because it is not moving
-
+DOG_SIZE = (250, 200) # this is a tuple because the dog is not changing size
 # Duck
 DUCK_SIZE = (100, 100) # this is a tuple because the duck is not changing size
 
@@ -38,8 +38,6 @@ class Duck:
     ----------
     duck_img ():
     duck_pos (list): Position of the duck
-    x_speed (int): Horizontal speed of the duck
-    y_speed (int): Vertical speed of the duck
     """
     def __init__(self, duck_img_file_path: str):
         """
@@ -82,7 +80,7 @@ duck_hunter_background_img = pygame.transform.scale(duck_hunter_background_img, 
 
 # Load dog
 dog_img = pygame.image.load("Session8\\assets\\dog.png").convert_alpha()
-dog_img = pygame.transform.scale(dog_img, (250, 200))
+dog_img = pygame.transform.scale(dog_img, DOG_SIZE)
 
 # Create our duck object
 duck = Duck("Session8\\assets\\duck.png")
