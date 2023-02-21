@@ -1,12 +1,12 @@
 # !/usr/bin/env python3
-# @file step2_duck_class.py
-# SCRP: Step 2 - Duck Class
+# @file step3_moving_duck.py
+# SCRP: Step 3 - Moving Duck
 # Daryl Dang
 
 """
-Step 2 - Duck Class
+Step 3 - Moving Duck
 ------------------------------------
-This step will go over how to make a duck class and give it basic methods to be drawn to the screen.
+This step will go over how to move the previously created duck object.
 """
 ####################################################################################################
 # IMPORTS
