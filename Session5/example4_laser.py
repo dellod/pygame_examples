@@ -25,7 +25,6 @@ player_image = pygame.image.load('images\spaceship.png').convert_alpha()
 player_image = pygame.transform.scale(player_image,(75,50))
 player_X = 400
 player_Y = 523
-player_X_movement = 0
 
 #blit player
 def player(x,y):
@@ -37,7 +36,6 @@ laser_image = pygame.image.load('images\laser.png').convert_alpha()
 laser_image = pygame.transform.scale(laser_image,(30,58))
 laser_X = 0
 laser_Y = 500
-laser_X_movement = 0
 laser_Y_movement = 5
 laser_ready = True
 
@@ -76,7 +74,7 @@ while running:
             laser(laser_X, laser_Y)
 
 
-    player_X += player_X_movement
+    
 
     # if laser has gone to the top of the screen, reset laser state to rest
     if laser_Y <= 0:
