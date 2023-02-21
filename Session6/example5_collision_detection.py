@@ -62,7 +62,6 @@ laser_image = pygame.image.load('images\laser.png').convert_alpha()
 laser_image = pygame.transform.scale(laser_image,(30,58))
 laser_X = 0
 laser_Y = 500
-laser_X_movement = 0
 laser_Y_movement = 5
 laser_ready = True
 
