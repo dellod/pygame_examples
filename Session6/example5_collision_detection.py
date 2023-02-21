@@ -27,7 +27,7 @@ player_image = pygame.image.load('images\spaceship.png').convert_alpha()
 player_image = pygame.transform.scale(player_image,(75,50))
 player_X = 400
 player_Y = 523
-player_X_movement = 0
+
 
 #blit player
 def player(x,y):
@@ -107,7 +107,7 @@ while running:
             laser_X = player_X
             laser(laser_X, laser_Y)
 
-    player_X += player_X_movement
+    
 
     # for loop to move invaders on the x axis
     for i in range(number_of_invaders):
