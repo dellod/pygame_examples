@@ -12,7 +12,7 @@ This step will go over how to make a duck class and give it basic methods to be 
 # IMPORTS
 ####################################################################################################
 import pygame
-
+import time
 ####################################################################################################
 # GLOBALS/CONSTANTS
 ####################################################################################################
@@ -57,14 +57,37 @@ class Duck:
         self.duck_img = pygame.image.load(duck_img_file_path).convert_alpha()
         self.duck_img = pygame.transform.scale(self.duck_img, DUCK_SIZE)
 
-        # Load a default position for the duck to start
-        self.duck_pos = [0, 0]
+        # Load a default position for the duck to start (bottom of the screen)
+        self.duck_pos = [500, 700]
+
+        # Initialize speed of duck for x and y
+        self.duck_x_speed = 5 # this will change when it hits a wall
+        self.duck_y_speed = -2
 
     def draw(self):
         """
         This will draw the duck to the display window using it's current set position (duck_pos).
         """
         self.display.blit(self.duck_img, self.duck_pos)
+
+    def update_position(self):
+        """
+        Move the duck upwards and side to side. This will check if the duck hits the side of the
+        wall and flip the direction of the x speed so it goes the other way.
+        """
+        # Update x and y position
+        self.duck_pos[0] += self.duck_x_speed
+        self.duck_pos[1] += self.duck_y_speed
+
+        # Check if hitting the wall
+        # The current method is simplified but can be condensed into one if statement... How do we
+        # do this?
+        if self.duck_pos[0] <= 0:
+            self.duck_x_speed = 5 # go to the right instead
+            self.duck_img = pygame.transform.flip(self.duck_img, True, False) # Flip vertically
+        elif self.duck_pos[0] + DUCK_SIZE[1] >= SCREEN_WIDTH:
+            self.duck_x_speed = -5 # go to the left instead
+            self.duck_img = pygame.transform.flip(self.duck_img, True, False) # Flip vertically
 
 ####################################################################################################
 # SETUP
@@ -90,6 +113,8 @@ duck = Duck(display, "Session8\\assets\\duck.png")
 # MAIN GAME LOOP
 ####################################################################################################
 running = True
+time.sleep(5)
+
 while running:
     # Event loop
     for event in pygame.event.get():
@@ -105,6 +130,9 @@ while running:
 
     # Draw duck using draw method from class
     duck.draw()
+
+    # Update the position of our duck
+    duck.update_position()
 
     # Update the pygame window and set clock tick
     pygame.display.update()
