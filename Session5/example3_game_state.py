@@ -35,7 +35,7 @@ player_image = pygame.image.load('images\spaceship.png').convert_alpha()
 player_image = pygame.transform.scale(player_image,(75,50))
 player_X = 400
 player_Y = 523
-player_X_movement = 0
+
 
 
 def player(x,y):
@@ -83,7 +83,7 @@ while running:
         player_X += 1.7
 
 
-    player_X += player_X_movement
+   
 
     #for loop to move invaders on the x axis
     for i in range(number_of_invaders):
