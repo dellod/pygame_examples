@@ -169,8 +169,6 @@ duck = Duck(display, "Session8\\assets\\duck.png")
 # MAIN GAME LOOP
 ####################################################################################################
 running = True
-import time
-time.sleep(7)
 while running:
     # Event loop
     for event in pygame.event.get():
