@@ -62,6 +62,7 @@ laser_image = pygame.image.load('images\laser.png').convert_alpha()
 laser_image = pygame.transform.scale(laser_image,(30,58))
 laser_X = 0
 laser_Y = 500
+laser_X_movement = 0
 laser_Y_movement = 5
 laser_ready = True
 
@@ -73,14 +74,11 @@ def laser(x,y):
 
 #function to detect collision
 
-def isCollision(x1,x2,y1,y2):
+def get_dist(x1,x2,y1,y2):
     #calculate distance
     distance = math.sqrt((math.pow(x1 - x2, 2)) + (math.pow(y1 - y2, 2)))
     #if distance variable is at least 30 pixels away then we detect collision
-    if distance <= 30:
-        return True
-    else:
-        return False
+    return distance
 
 #Game loop
 running = True
@@ -106,7 +104,6 @@ while running:
             laser_X = player_X
             laser(laser_X, laser_Y)
 
-   
 
     # for loop to move invaders on the x axis
     for i in range(number_of_invaders):
@@ -130,9 +127,9 @@ while running:
             invader_X_movement[i] *= -1
             invader_Y[i] += invader_Y_movement[i]
         # collision detection for invader with laser
-        collision = isCollision(laser_X, invader_X[i], laser_Y, invader_Y[i])
+        distance = get_dist(laser_X, invader_X[i], laser_Y, invader_Y[i])
         #if it's true that the laser collided with an invader
-        if collision:
+        if distance <= 30:
             #reset laser's Y position
             laser_Y = 550
             #set laser back to rest to allow player to shoot again
