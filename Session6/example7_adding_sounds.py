@@ -22,6 +22,8 @@ pygame.display.set_caption("Space Invader")
 
 #Background Sound
 mixer.music.load('sounds\some_playstation_ski-core_instrumental.wav')
+#Sets volume to a floating point value between 0.0 and 1.0
+mixer.music.set_volume(0.15)
 mixer.music.play(-1)
 
 #player variables
