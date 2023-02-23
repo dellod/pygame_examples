@@ -91,17 +91,15 @@ def laser(x, y):
     laser_ready= False
 
 
-# function to detect collision
+# function to get distance between two points
 
-def isCollision(x1, x2, y1, y2):
-    # calculate distance
+def get_dist(x1, x2, y1, y2):
     distance = math.sqrt((math.pow(x1 - x2, 2)) + (math.pow(y1 - y2, 2)))
-    # if distance variable is at least 30 pixels away then we detect collision
-    if distance <= 30:
-        return True
-    else:
-        return False
 
+    return distance
+  
+    
+ 
 
 # Game loop
 running = True
@@ -127,7 +125,7 @@ while running:
         laser_X = player_X
         laser(laser_X, laser_Y)
 
-    #player_X += player_X_movement
+  
 
     # for loop to move invaders on the x axis
     for i in range(number_of_invaders):
@@ -149,11 +147,11 @@ while running:
             # reverse movement of invader
             invader_X_movement[i] *= -1
             invader_Y[i] += invader_Y_movement[i]
-        # collision detection for invader with laser
-        collision = isCollision(laser_X, invader_X[i], laser_Y, invader_Y[i])
+        # collect distance and store it
+        distance = get_dist(laser_X, invader_X[i], laser_Y, invader_Y[i])
 
         # if it's true that the laser collided with an invader
-        if collision:
+        if distance <= 30:
             #add 1 point to score
             score_value += 1
             # reset laser's Y position
