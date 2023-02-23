@@ -1,12 +1,12 @@
 # !/usr/bin/env python3
-# @file step4_hitting_duck.py
-# SCRP: Step 4 - Hitting Duck
+# @file step5_adding_score_and_health.py
+# SCRP: Step 5 - Adding Score and Health
 # Daryl Dang
 
 """
-Step 4 - Hitting Duck
+Step 5 - Adding Score and Health
 ---------------------
-This step will go over how to hit and reset the moving duck.
+This step will go over how to add a score and health system.
 """
 ####################################################################################################
 # IMPORTS
@@ -21,6 +21,14 @@ import math
 SCREEN_WIDTH = 1000
 SCREEN_HEIGHT = 800
 FPS = 60
+
+# Colours
+WHITE = (255, 255, 255)
+RED = (150, 0, 0)
+
+# Score and Health
+SCORE = 0
+LIVES = 1
 
 # Crosshair
 CROSSHAIR_SIZE = (50, 50)
@@ -141,6 +149,18 @@ class Duck:
         """
         self.duck_pos = list(DEFAULT_DUCK_POS)
 
+    def check_if_above_screen(self):
+        """
+        Checks if the duck is above the screen, if it is then return True, otherwise return False.
+
+        Returns:
+            (bool): True if above, False otherwise.
+        """
+        if self.duck_pos[1] <= 0:
+            return True
+        else:
+            return False
+
 ####################################################################################################
 # SETUP
 ####################################################################################################
@@ -165,6 +185,9 @@ crosshair_img = pygame.transform.scale(crosshair_img, CROSSHAIR_SIZE)
 # Create our duck object
 duck = Duck(display, "Session8\\assets\\duck.png")
 
+# Load fonts
+font = pygame.font.Font('freesansbold.ttf', 42)
+
 ####################################################################################################
 # MAIN GAME LOOP
 ####################################################################################################
@@ -179,6 +202,16 @@ while running:
     # Draw background
     display.blit(duck_hunter_background_img, (0,0)) # Put starting position in top left corner
 
+    # Draw score text and update
+    score = "Score: " + str(SCORE)
+    text_score = font.render(score, True, WHITE)
+    display.blit(text_score, (10, 10))
+
+    # Draw lives text and update
+    health = "Lives: " + str(LIVES)
+    text_lives = font.render(health, True, RED)
+    display.blit(text_lives, (10, 60))
+
     # Draw dog
     display.blit(dog_img, DOG_POS)
 
@@ -187,6 +220,11 @@ while running:
 
     # Update the position of our duck
     duck.update_position()
+
+    # Check if the duck is above the screen, if so lose health point and reset position.
+    if duck.check_if_above_screen():
+        LIVES -= 1
+        duck.reset_position()
 
     # Draw the crosshair that will follow the mouse around
     mouse_pos = pygame.mouse.get_pos()
@@ -197,7 +235,22 @@ while running:
     # Check if we are touching the duck and get the mouse pressed values
     mouse_pressed = pygame.mouse.get_pressed()
     if duck.check_if_duck_is_hit(mouse_pos, mouse_pressed):
+        SCORE += 1
         duck.reset_position()
+
+    # Check if LIVES is less than zero and then trigger the game over event
+    if LIVES <= 0:
+        # Fill background
+        display.fill(0)
+
+        # Show game over text
+        text_game_over = font.render("Game Over", True, WHITE)
+        display.blit(text_game_over, (380, 350))
+
+        # Show final score
+        score = "Final Score: " + str(SCORE)
+        text_score = font.render(score, True, WHITE)
+        display.blit(text_score, (360, 400))
 
     # Update the pygame window and set clock tick
     pygame.display.update()
