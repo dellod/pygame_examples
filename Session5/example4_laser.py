@@ -25,7 +25,7 @@ player_image = pygame.image.load('images\spaceship.png').convert_alpha()
 player_image = pygame.transform.scale(player_image,(75,50))
 player_X = 400
 player_Y = 523
-player_X_movement = 0
+player_X_movement = 1.7
 
 #blit player
 def player(x,y):
@@ -37,7 +37,6 @@ laser_image = pygame.image.load('images\laser.png').convert_alpha()
 laser_image = pygame.transform.scale(laser_image,(30,58))
 laser_X = 0
 laser_Y = 500
-laser_X_movement = 0
 laser_Y_movement = 5
 laser_ready = True
 
@@ -65,9 +64,9 @@ while running:
     keys_pressed = pygame.key.get_pressed()
     # Control player movement with arrow keys
     if keys_pressed[pygame.K_LEFT]:
-        player_X += -1.7
+        player_X -= player_X_movement
     if keys_pressed[pygame.K_RIGHT]:
-        player_X += 1.7
+        player_X += player_X_movement
     if keys_pressed[pygame.K_SPACE]:
         # if no laser has been shot then call laser function and place laser X coord where player X coord is
         if laser_ready:
@@ -76,7 +75,7 @@ while running:
             laser(laser_X, laser_Y)
 
 
-    player_X += player_X_movement
+
 
     # if laser has gone to the top of the screen, reset laser state to rest
     if laser_Y <= 0:

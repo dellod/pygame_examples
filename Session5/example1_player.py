@@ -2,7 +2,7 @@
 
 import pygame
 
-
+#Initializing setup variables for later
 WHITE = (255, 255, 255)
 BLACK = (0,0,0)
 FPS = 60
@@ -25,11 +25,11 @@ player_image = pygame.image.load('images\spaceship.png').convert_alpha()
 player_image = pygame.transform.scale(player_image,(75,50))
 player_X = 400
 player_Y = 523
-player_X_movement = 0
+player_X_movement = 1.7
 
 #blit player
 def player(x,y):
-    #important to
+    #important to offset the x and y position slightly so the center of the ship is displayed correctly
     screen.blit(player_image,(x-16, y+10))
 
 #Game loop
@@ -46,11 +46,9 @@ while running:
     keys_pressed = pygame.key.get_pressed()
     # Control player movement with arrow keys
     if keys_pressed[pygame.K_LEFT]:
-        player_X += -1.7
+        player_X -= player_X_movement
     if keys_pressed[pygame.K_RIGHT]:
-        player_X += 1.7
-
-    player_X += player_X_movement
+        player_X += player_X_movement
 
     # stop player from going out of bounds
     if player_X <= 16:
