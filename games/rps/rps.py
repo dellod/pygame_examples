@@ -1,12 +1,13 @@
 # !/usr/bin/env python3
-# @file memory_game.py
-# SCRP: Memory Game
+# @file rps.py
+# SCRP: Rock, Paper, Scissors
 # Daryl Dang
 
 """
-Memory Game
+Rock, Paper, Scissors
 -----------
-
+Classic game of rock, paper, scissors where you play as the most left player and a CPU choice is
+randomized.
 """
 ####################################################################################################
 # IMPORTS
@@ -49,7 +50,7 @@ OUTCOME_POS = (50, 300)
 # Initialize pygame and display window
 pygame.init()
 display = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-pygame.display.set_caption("Memory Game")
+pygame.display.set_caption("Rock, Paper, Scissors")
 clock = pygame.time.Clock()
 
 # Load images
