@@ -184,17 +184,17 @@ pygame.display.set_caption("Duck Hunter")
 clock = pygame.time.Clock()
 
 # Load all images
-duck_hunter_background_img = pygame.image.load("Session8\\assets\\background.png").convert()
+duck_hunter_background_img = pygame.image.load("games\\duck_hunter\\assets\\background.png").convert()
 duck_hunter_background_img = pygame.transform.scale(duck_hunter_background_img, (SCREEN_WIDTH, SCREEN_HEIGHT))
-duck_hunter_background_grass_img = pygame.image.load("Session8\\assets\\grass.png").convert_alpha()
+duck_hunter_background_grass_img = pygame.image.load("games\\duck_hunter\\assets\\grass.png").convert_alpha()
 duck_hunter_background_grass_img = pygame.transform.scale(duck_hunter_background_grass_img, (SCREEN_WIDTH, SCREEN_HEIGHT))
-dog_img = pygame.image.load("Session8\\assets\\dog.png").convert_alpha()
+dog_img = pygame.image.load("games\\duck_hunter\\assets\\dog.png").convert_alpha()
 dog_img = pygame.transform.scale(dog_img, DOG_SIZE)
-crosshair_img = pygame.image.load("Session8\\assets\\crosshair.png").convert_alpha()
+crosshair_img = pygame.image.load("games\\duck_hunter\\assets\\crosshair.png").convert_alpha()
 crosshair_img = pygame.transform.scale(crosshair_img, CROSSHAIR_SIZE)
 
 # Create our duck object
-duck = Duck(display, "Session8\\assets\\duck.png")
+duck = Duck(display, "games\\duck_hunter\\assets\\duck.png")
 
 # Create events
 DIFFICULTY_TIMER_EVENT = pygame.USEREVENT + 1
@@ -205,7 +205,7 @@ font = pygame.font.Font('freesansbold.ttf', 42)
 
 # Load music
 pygame.mixer.init()
-pygame.mixer.music.load("Session8\\assets\\bg_music.mp3")
+pygame.mixer.music.load("games\\duck_hunter\\assets\\bg_music.mp3")
 pygame.mixer.music.set_volume(0.1)
 pygame.mixer.music.play()
 
