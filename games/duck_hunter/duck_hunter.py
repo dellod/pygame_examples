@@ -1,11 +1,11 @@
 # !/usr/bin/env python3
-# @file final_game.py
+# @file duck_hunter.py
 # SCRP: Duck Hunter
 # Daryl Dang
 
 """
 Duck Hunter
----------------------
+-----------
 The game where you shoot flying ducks and get points!
 """
 ####################################################################################################
@@ -238,7 +238,7 @@ while running:
     # Draw dog
     display.blit(dog_img, DOG_POS)
 
-    # Draw duck using draw method from class and update the position 
+    # Draw duck using draw method from class and update the position
     duck.draw()
     duck.update_position()
 
